@@ -1,0 +1,138 @@
+<!--
+ ************************************************************************
+ * Copyright (c) Crater Dog Technologies(TM).  All Rights Reserved.     *
+ ************************************************************************
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.        *
+ *                                                                      *
+ * This code is free software; you can redistribute it and/or modify it *
+ * under the terms of The MIT License (MIT), as published by the Open   *
+ * Source Initiative. (See http://opensource.org/licenses/MIT)          *
+ ************************************************************************
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <organization>
+        <name>Crater Dog Technologies(TM)</name>
+        <url>http://craterdog.com</url>
+    </organization>
+
+    <parent>
+        <groupId>com.craterdog.maven-parent-poms</groupId>
+        <artifactId>java-api</artifactId>
+        <version>3.0-SNAPSHOT</version>
+        <relativePath>../java-api/pom.xml</relativePath>
+    </parent>
+
+    <groupId>com.craterdog.maven-parent-poms</groupId>
+    <artifactId>java-module</artifactId>
+    <packaging>pom</packaging>
+    <version>3.0-SNAPSHOT</version>
+    <name>Crater Dog Java Implementation Module Parent POM</name>
+    <description>The parent POM for all general Java code modules.</description>
+
+    <contributors>
+        <contributor>
+            <name>Derk Norton</name>
+            <email>derk.norton@gmail.com</email>
+            <organization>Crater Dog Technologies(TM)</organization>
+        </contributor>
+    </contributors>
+
+    <properties>
+        <commons-lang-version>2.6</commons-lang-version>
+        <commons-codec-version>1.8</commons-codec-version>
+        <commons-io-version>2.4</commons-io-version>
+        <jackson-version>2.3.1</jackson-version>
+        <cglib-version>3.1</cglib-version>
+        <aspectj-version>1.7.4</aspectj-version>
+        <junit-version>4.11</junit-version>
+        <easymock-version>3.2</easymock-version>
+    </properties>
+
+    <dependencies>
+
+        <!-- Add in General Utilities -->
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>${commons-lang-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${commons-codec-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io-version}</version>
+        </dependency>
+
+        <!-- Allow Formatting in JSON -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-version}</version>
+        </dependency>
+
+        <!-- AOP dependencies -->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>${cglib-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjtools</artifactId>
+            <version>${aspectj-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj-version}</version>
+        </dependency>
+
+        <!-- Various Application Context utilities, including EhCache, JavaMail,
+            Quartz, and Freemarker integration Define this if you need any of these integrations -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring-version}</version>
+        </dependency>
+
+        <!-- Support for testing Spring applications with tools such as JUnit
+            and TestNG This artifact is generally defined with a 'test' scope for the
+            integration testing framework and unit testing stubs -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring-version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit-version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.easymock</groupId>
+            <artifactId>easymock</artifactId>
+            <version>${easymock-version}</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <scm>
+        <connection>scm:git:git@github.com:craterdog/maven-parent-poms.git</connection>
+        <tag>HEAD</tag>
+    </scm>
+
+</project>

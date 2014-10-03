@@ -1,0 +1,116 @@
+<!--
+ ************************************************************************
+ * Copyright (c) Crater Dog Technologies(TM).  All Rights Reserved.     *
+ ************************************************************************
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.        *
+ *                                                                      *
+ * This code is free software; you can redistribute it and/or modify it *
+ * under the terms of The MIT License (MIT), as published by the Open   *
+ * Source Initiative. (See http://opensource.org/licenses/MIT)          *
+ ************************************************************************
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <organization>
+        <name>Crater Dog Technologies(TM)</name>
+        <url>http://craterdog.com</url>
+    </organization>
+
+    <parent>
+        <groupId>com.craterdog.maven-parent-poms</groupId>
+        <artifactId>java-module</artifactId>
+        <version>3.0-SNAPSHOT</version>
+        <relativePath>../java-module/pom.xml</relativePath>
+    </parent>
+
+    <groupId>com.craterdog.maven-parent-poms</groupId>
+    <artifactId>java-web-service</artifactId>
+    <packaging>pom</packaging>
+    <version>3.0-SNAPSHOT</version>
+    <name>Crater Dog Java Web Service Parent POM</name>
+    <description>The parent POM for all Java code modules that expose a web service.</description>
+
+    <contributors>
+        <contributor>
+            <name>Derk Norton</name>
+            <email>derk.norton@gmail.com</email>
+            <organization>Crater Dog Technologies(TM)</organization>
+        </contributor>
+    </contributors>
+
+    <properties>
+        <webservice-context>MUST BE OVERRIDDEN</webservice-context>
+        <cxf-version>2.7.8</cxf-version>
+        <jetty-plugin-version>9.1.0.v20131115</jetty-plugin-version>
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxrs</artifactId>
+            <version>${cxf-version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.eclipse.jetty</groupId>
+                    <artifactId>jetty-server</artifactId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>jaxb-impl</artifactId>
+                    <groupId>com.sun.xml.bind</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>jettison</artifactId>
+                    <groupId>org.codehaus.jettison</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+         <dependency>
+            <groupId>com.fasterxml.jackson.jaxrs</groupId>
+            <artifactId>jackson-jaxrs-json-provider</artifactId>
+            <version>${jackson-version}</version>
+        </dependency>
+
+         <dependency>
+            <groupId>com.fasterxml.jackson.jaxrs</groupId>
+            <artifactId>jackson-jaxrs-xml-provider</artifactId>
+            <version>${jackson-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring-version}</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>${jetty-plugin-version}</version>
+                <configuration>
+                    <useTestScope>true</useTestScope>
+                    <webApp>
+                        <contextPath>${webservice-context}</contextPath>
+                    </webApp>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <scm>
+        <connection>scm:git:git@github.com:craterdog/maven-parent-poms.git</connection>
+        <tag>HEAD</tag>
+    </scm>
+
+</project>

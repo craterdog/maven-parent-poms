@@ -1,0 +1,55 @@
+<!--
+ ************************************************************************
+ * Copyright (c) Crater Dog Technologies(TM).  All Rights Reserved.     *
+ ************************************************************************
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.        *
+ *                                                                      *
+ * This code is free software; you can redistribute it and/or modify it *
+ * under the terms of The MIT License (MIT), as published by the Open   *
+ * Source Initiative. (See http://opensource.org/licenses/MIT)          *
+ ************************************************************************
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <organization>
+        <name>Crater Dog Technologies(TM)</name>
+        <url>http://craterdog.com</url>
+    </organization>
+
+    <parent>
+        <groupId>com.craterdog.maven-parent-poms</groupId>
+        <artifactId>root</artifactId>
+        <version>3.0-SNAPSHOT</version>
+        <relativePath>root/pom.xml</relativePath>
+    </parent>
+
+    <groupId>com.craterdog.maven-parent-poms</groupId>
+    <artifactId>aggregator</artifactId>
+    <packaging>pom</packaging>
+    <version>3.0-SNAPSHOT</version>
+    <name>Crater Dog Parent POM Aggregator Project</name>
+    <description>The aggregator POM for packaging the parent POM artifacts.</description>
+
+    <contributors>
+        <contributor>
+            <name>Derk Norton</name>
+            <email>derk.norton@gmail.com</email>
+            <organization>Crater Dog Technologies(TM)</organization>
+        </contributor>
+    </contributors>
+
+    <modules>
+        <module>root</module>
+        <module>java-api</module>
+        <module>java-module</module>
+        <module>java-web-service</module>
+    </modules>
+
+    <scm>
+        <connection>scm:git:git@github.com:craterdog/maven-parent-poms.git</connection>
+        <tag>HEAD</tag>
+    </scm>
+
+</project>
