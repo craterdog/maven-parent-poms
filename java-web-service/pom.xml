@@ -13,11 +13,6 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <organization>
-        <name>Crater Dog Technologies(TM)</name>
-        <url>http://craterdog.com</url>
-    </organization>
-
     <parent>
         <groupId>com.craterdog.maven-parent-poms</groupId>
         <artifactId>java-module</artifactId>
@@ -25,20 +20,35 @@
         <relativePath>../java-module/pom.xml</relativePath>
     </parent>
 
-    <groupId>com.craterdog.maven-parent-poms</groupId>
-    <artifactId>java-web-service</artifactId>
-    <packaging>pom</packaging>
-    <version>3.0-SNAPSHOT</version>
+    <organization>
+        <name>Crater Dog Technologies(TM)</name>
+        <url>http://craterdog.com</url>
+    </organization>
+
     <name>Crater Dog Java Web Service Parent POM</name>
     <description>The parent POM for all Java code modules that expose a web service.</description>
+    <url>https://github.com/craterdog/maven-parent-poms/wiki</url>
 
-    <contributors>
-        <contributor>
+    <groupId>com.craterdog.maven-parent-poms</groupId>
+    <artifactId>java-web-service</artifactId>
+    <version>3.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+            <url>http://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
             <name>Derk Norton</name>
             <email>derk.norton@gmail.com</email>
             <organization>Crater Dog Technologies(TM)</organization>
-        </contributor>
-    </contributors>
+            <organizationUrl>http://craterdog.com</organizationUrl>
+        </developer>
+    </developers>
 
     <properties>
         <webservice-context>MUST BE OVERRIDDEN</webservice-context>
@@ -110,6 +120,8 @@
 
     <scm>
         <connection>scm:git:git@github.com:craterdog/maven-parent-poms.git</connection>
+        <developerConnection>scm:git:git@github.com:craterdog/maven-parent-poms.git</developerConnection>
+        <url>git@github.com:craterdog/maven-parent-poms.git</url>
         <tag>HEAD</tag>
     </scm>
 
