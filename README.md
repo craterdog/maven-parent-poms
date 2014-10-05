@@ -1,5 +1,5 @@
 #Maven Parent POMs
-These maven POM projects provide a starter set of parent pom.xml files for use in creating new, open source ready, maven projects.Each one includes a typical set of dependencies related to a specific type of project.
+These maven POM projects provide a starter set of parent pom.xml files for use in creating new, open source ready, maven projects. Each one includes a typical set of dependencies related to a specific type of project.
 
 ##Root Parent POM
 The *root* project provides a root level pom.xml file that is inherited by all other parent pom.xml files that are provided by this git repository. This root pom.xml file defines dependencies on the following projects:
