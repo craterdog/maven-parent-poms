@@ -10,7 +10,7 @@ The *root* project provides a root level pom.xml file that is inherited by all o
    * maven-scm-plugin
    * maven-release-plugin (autoversionsubmodules)
    * maven-deploy-plugin
-   * maven-gpg-plugin (only when passphrase is passed)
+   * maven-gpg-plugin (only when a passphrase is passed)
 
 To use it to create a new parent pom.xml file, simply include the following block in your new parent pom.xml file:
 
@@ -100,4 +100,26 @@ To use it as the parent POM for this type of project, simply include the followi
     </parent>
 
 Similarly, the pom.xml file for the *java-web-service* project actually inherits from the pom.xml file for the *java-pojo* project and shares all of its definitions and dependencies.
+
+## Using Parent POMs in Multi-Module Maven Projects
+Often a project will be structured as a mulit-module maven project so that each subproject is maintained and released together. If the subprojects are of different types they each require a different parent pom.xml file containing the dependencies that are appropriate for that type of project.  The parent pom.xml files listed above can be used as the parent pom.xml files for subprojects as well with one important addition to the declaration. For example, if one of the subprojects defines Java POJOs, the following should be used to define its parent POM:
+
+    <parent>
+        <groupId>com.craterdog.maven-parent-poms</groupId>
+        <artifactId>java-pojo</artifactId>
+        <version>3.0</version>
+        <relativePath/>
+    </parent>
+
+The empty "relativePath" attribute tells maven that the parent POM is not the *aggregator* POM from the multi-module project but, instead, should be searched for in the central maven repository. Without this attribute in the declaration, maven will generate a warning similar to the following:
+
+    [INFO] Scanning for projects...
+    [WARNING] 
+    [WARNING] Some problems were encountered while building the effective model for com.craterdog.example:example-beans:jar:3.0-SNAPSHOT
+    [WARNING] 'parent.relativePath' points at com.craterdog.example:aggregator instead of com.craterdog.maven-parent-poms:java-pojo, please verify your project structure @ line 25, column 13
+    [WARNING] 
+    [WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+    [WARNING] 
+    [WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+    [WARNING] 
 
