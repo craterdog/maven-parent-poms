@@ -17,7 +17,7 @@ To use it to create a new parent pom.xml file, simply include the following bloc
     <parent>
         <groupId>com.craterdog.maven-parent-poms</groupId>
         <artifactId>root</artifactId>
-        <version>3.0</version>
+        <version>3.3</version>
     </parent>
 
 ##Java API Parent POM
@@ -47,7 +47,7 @@ To use it as the parent POM for this type of project, simply include the followi
     <parent>
         <groupId>com.craterdog.maven-parent-poms</groupId>
         <artifactId>java-api</artifactId>
-        <version>3.0</version>
+        <version>3.3</version>
     </parent>
 
 ##Java POJO Parent POM
@@ -73,7 +73,7 @@ To use it as the parent POM for this type of project, simply include the followi
     <parent>
         <groupId>com.craterdog.maven-parent-poms</groupId>
         <artifactId>java-pojo</artifactId>
-        <version>3.0</version>
+        <version>3.3</version>
     </parent>
 
 Note, the pom.xml file for the *java-pojo* project actually inherits from the pom.xml file for the *java-api* project and shares all of its definitions and dependencies.
@@ -96,7 +96,7 @@ To use it as the parent POM for this type of project, simply include the followi
     <parent>
         <groupId>com.craterdog.maven-parent-poms</groupId>
         <artifactId>java-web-service</artifactId>
-        <version>3.0</version>
+        <version>3.3</version>
     </parent>
 
 Similarly, the pom.xml file for the *java-web-service* project actually inherits from the pom.xml file for the *java-pojo* project and shares all of its definitions and dependencies.
@@ -107,7 +107,7 @@ Often a project will be structured as a mulit-module maven project so that each 
     <parent>
         <groupId>com.craterdog.maven-parent-poms</groupId>
         <artifactId>java-pojo</artifactId>
-        <version>3.0</version>
+        <version>3.3</version>
         <relativePath/>
     </parent>
 
@@ -115,7 +115,7 @@ The empty "relativePath" attribute tells maven that the parent POM is not the *a
 
     [INFO] Scanning for projects...
     [WARNING] 
-    [WARNING] Some problems were encountered while building the effective model for com.craterdog.example:example-beans:jar:3.0-SNAPSHOT
+    [WARNING] Some problems were encountered while building the effective model for com.craterdog.example:example-beans:jar:1.0-SNAPSHOT
     [WARNING] 'parent.relativePath' points at com.craterdog.example:aggregator instead of com.craterdog.maven-parent-poms:java-pojo, please verify your project structure @ line 25, column 13
     [WARNING] 
     [WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
