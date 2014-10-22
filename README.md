@@ -42,5 +42,5 @@ attribute as follows:
     </parent>
 ```
 
-See the [wiki](https://github.com/craterdog/maven-parent-poms/wiki/Crater-Dog-Technologies%E2%84%A2-Maven-Parent-Poms)
+See the [wiki](https://github.com/craterdog/maven-parent-poms/wiki/Crater-Dog-Technologies%E2%84%A2-Maven-Parent-Poms#using-parent-poms-in-multi-module-maven-projects)
 for details on why this is necessary.
