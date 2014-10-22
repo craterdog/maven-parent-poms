@@ -45,3 +45,13 @@ Or, if your project is a subproject of a *multi-module* maven project, you will 
 
 See the [wiki](https://github.com/craterdog/maven-parent-poms/wiki/Crater-Dog-Technologies%E2%84%A2-Maven-Parent-Poms#using-parent-poms-in-multi-module-maven-projects)
 for details on why this is necessary.
+
+The parent pom.xml file artifacts for this project are available from the *Maven Central Repository*.
+
+## Recognition
+*Crater Dog Technologies™* would like to recognize and thank the following
+companies for their contributions to the development and testing of various
+components within this project:
+
+ * *Blackhawk Network* (http://blackhawknetwork.com)
+
