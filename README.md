@@ -20,7 +20,8 @@ For more detail on this project click on the following links:
  * [website](http://craterdog.com)
 
 ## Getting Started
-To get started using these POM files, include something like the following dependency in your maven pom.xml file:
+To get started using these parent POM files, include something like the following dependency in your
+maven pom.xml file:
 
 ```xml
     <parent>
@@ -30,8 +31,8 @@ To get started using these POM files, include something like the following depen
     </parent>
 ```
 
-Or, if your project is a subproject of a *multi-module* maven project, you will need to add a `<relativePath/>`
-attribute as follows:
+Or, if your project is a subproject of a *multi-module* maven project, you will need to add an empty
+ `<relativePath/>` attribute as follows:
 
 ```xml
     <parent>
