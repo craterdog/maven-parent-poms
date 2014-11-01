@@ -1,6 +1,6 @@
 # Maven Parent POMs
 
-## The Gist
+## In a Nut Shell
 These maven POM projects provide a starter set of parent pom.xml files for use in creating new, open source ready, maven projects. Each one includes a typical set of dependencies related to a specific type of project.
 
 ## Highlighted Components
