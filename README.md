@@ -16,7 +16,7 @@ purely declarative classes (no methods)
 For more detail on this project click on the following links:
 
  * [Apache Maven - Introduction to the POM](http://maven.apache.org/guides/introduction/introduction-to-the-pom.html)
- * [wiki](https://github.com/craterdog/maven-parent-poms/wiki/Crater-Dog-Technologies%E2%84%A2-Maven-Parent-Poms)
+ * [wiki](https://github.com/craterdog/maven-parent-poms/wiki)
  * [website](http://craterdog.com)
 
 ## Getting Started
@@ -43,7 +43,7 @@ Or, if your project is a subproject of a *multi-module* maven project, you will 
     </parent>
 ```
 
-See the [wiki](https://github.com/craterdog/maven-parent-poms/wiki/Crater-Dog-Technologies%E2%84%A2-Maven-Parent-Poms#using-parent-poms-in-multi-module-maven-projects)
+See the [wiki](https://github.com/craterdog/maven-parent-poms/wiki#using-parent-poms-in-multi-module-maven-projects)
 for details on why this is necessary.
 
 The parent pom.xml file artifacts for this project are available from the *Maven Central Repository*.
