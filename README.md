@@ -17,6 +17,7 @@ For more detail on this project click on the following links:
 
  * [Apache Maven - Introduction to the POM](http://maven.apache.org/guides/introduction/introduction-to-the-pom.html)
  * [wiki](https://github.com/craterdog/maven-parent-poms/wiki)
+ * [release notes](https://github.com/craterdog/maven-parent-poms/wiki/Release-Notes)
  * [website](http://craterdog.com)
 
 ## Getting Started
