@@ -1,9 +1,9 @@
 # Maven Parent POMs
 
-## In a Nut Shell
+### In a Nut Shell
 These maven POM projects provide a starter set of parent pom.xml files for use in creating new, open source ready, maven projects. Each one includes a typical set of dependencies related to a specific type of project.
 
-## Highlighted Components
+### Highlighted Components
 The following highlights the parent pom.xml file that this project provides:
 
  * *root* - the root parent pom.xml file for all other parent pom.xml files
@@ -12,7 +12,7 @@ purely declarative classes (no methods)
  * *java-pojo* - defines dependencies needed by projects that define "plain old Java objects" (POJOs)
  * *java-web-service* - defines dependencies needed by web resources
 
-## Quick Links
+### Quick Links
 For more detail on this project click on the following links:
 
  * [Apache Maven - Introduction to the POM](http://maven.apache.org/guides/introduction/introduction-to-the-pom.html)
@@ -20,7 +20,7 @@ For more detail on this project click on the following links:
  * [release notes](https://github.com/craterdog/maven-parent-poms/wiki/Release-Notes)
  * [website](http://craterdog.com)
 
-## Getting Started
+### Getting Started
 To get started using these parent POM files, include something like the following dependency in your
 maven pom.xml file:
 
@@ -49,7 +49,7 @@ for details on why this is necessary.
 
 The parent pom.xml file artifacts for this project are available from the *Maven Central Repository*.
 
-## Recognition
+### Recognition
 *Crater Dog Technologies™* would like to recognize and thank the following
 companies for their contributions to the development and testing of various
 components within this project:
