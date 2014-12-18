@@ -1,7 +1,7 @@
-# Maven Parent POMs
+![Maven Parent POMs](https://github.com/craterdog/maven-parent-poms/blob/master/docs/images/DNA.jpg)
 
-### In a Nut Shell
-These maven POM projects provide a starter set of parent pom.xml files for use in creating new, open source ready, maven projects. Each one includes a typical set of dependencies related to a specific type of project.
+### Maven Parent POMs
+This maven multi-module project provide a starter set of parent pom.xml files for use in creating new, open source ready, maven projects. Each one includes a typical set of dependencies related to a specific type of project.
 
 ### Highlighted Components
 The following highlights the parent pom.xml file that this project provides:
@@ -17,7 +17,7 @@ For more detail on this project click on the following links:
 
  * [Apache Maven - Introduction to the POM](http://maven.apache.org/guides/introduction/introduction-to-the-pom.html)
  * [wiki](https://github.com/craterdog/maven-parent-poms/wiki)
- * [release notes](https://github.com/craterdog/maven-parent-poms/wiki/Release-Notes)
+ * [release notes](https://github.com/craterdog/maven-parent-poms/wiki/releases)
  * [website](http://craterdog.com)
 
 ### Getting Started
@@ -28,7 +28,7 @@ maven pom.xml file:
     <parent>
         <groupId>com.craterdog.maven-parent-poms</groupId>
         <artifactId>java-pojo</artifactId> <!-- or whichever parent POM project is right for your project -->
-        <version>3.6</version>
+        <version>x.y</version>
     </parent>
 ```
 
@@ -39,7 +39,7 @@ Or, if your project is a subproject of a *multi-module* maven project, you will 
     <parent>
         <groupId>com.craterdog.maven-parent-poms</groupId>
         <artifactId>java-pojo</artifactId> <!-- or whichever parent POM project is right for your project -->
-        <version>3.6</version>
+        <version>x.y</version>
         <relativePath/>
     </parent>
 ```
@@ -50,9 +50,9 @@ for details on why this is necessary.
 The parent pom.xml file artifacts for this project are available from the *Maven Central Repository*.
 
 ### Recognition
-*Crater Dog Technologies™* would like to recognize and thank the following
+_Crater Dog Technologies™_ would like to recognize and thank the following
 companies for their contributions to the development and testing of various
 components within this project:
 
- * *Blackhawk Network* (http://blackhawknetwork.com)
+ * _Blackhawk Network_ (http://blackhawknetwork.com)
 
