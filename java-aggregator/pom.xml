@@ -17,7 +17,7 @@
         <groupId>com.craterdog.maven-parent-poms</groupId>
         <artifactId>root</artifactId>
         <version>3.8-SNAPSHOT</version>
-        <relativePath>root/pom.xml</relativePath>
+        <relativePath>../root/pom.xml</relativePath>
     </parent>
 
     <organization>
@@ -25,12 +25,12 @@
         <url>http://craterdog.com</url>
     </organization>
 
-    <name>Crater Dog Parent POM Aggregator Project</name>
-    <description>The aggregator POM for packaging the parent POM artifacts.</description>
+    <name>Crater Dog Java Aggregator Module Parent POM</name>
+    <description>The parent POM for all Java modules that aggregate submodules.</description>
     <url>https://github.com/craterdog/maven-parent-poms/wiki</url>
 
     <groupId>com.craterdog.maven-parent-poms</groupId>
-    <artifactId>aggregator</artifactId>
+    <artifactId>java-aggregator</artifactId>
     <version>3.8-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -50,13 +50,36 @@
         </developer>
     </developers>
 
-    <modules>
-        <module>root</module>
-        <module>java-aggregator</module>
-        <module>java-api</module>
-        <module>java-pojo</module>
-        <module>java-web-service</module>
-    </modules>
+    <properties>
+        <maven-javadoc-plugin-version>2.9.1</maven-javadoc-plugin-version>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>${maven-javadoc-plugin-version}</version>
+                        <configuration>
+                            <detectJavaApiLink>true</detectJavaApiLink>
+                            <aggregate>true</aggregate>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>generate-javadoc</id>
+                                <goals>
+                                    <goal>aggregate-jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
     <scm>
         <connection>scm:git:git@github.com:craterdog/maven-parent-poms.git</connection>
