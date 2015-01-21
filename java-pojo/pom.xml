@@ -52,13 +52,13 @@
 
     <properties>
         <commons-lang-version>2.6</commons-lang-version>
-        <commons-codec-version>1.8</commons-codec-version>
+        <commons-codec-version>1.10</commons-codec-version>
         <commons-io-version>2.4</commons-io-version>
-        <jackson-version>2.4.3</jackson-version>
+        <jackson-version>2.5.0</jackson-version>
         <cglib-version>3.1</cglib-version>
-        <aspectj-version>1.7.4</aspectj-version>
-        <junit-version>4.11</junit-version>
-        <easymock-version>3.2</easymock-version>
+        <aspectj-version>1.8.4</aspectj-version>
+        <junit-version>4.12</junit-version>
+        <easymock-version>3.3.1</easymock-version>
     </properties>
 
     <dependencies>

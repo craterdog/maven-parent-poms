@@ -51,7 +51,7 @@
     </developers>
 
     <properties>
-        <maven-javadoc-plugin-version>2.9.1</maven-javadoc-plugin-version>
+        <maven-javadoc-plugin-version>2.10.1</maven-javadoc-plugin-version>
     </properties>
 
     <profiles>
