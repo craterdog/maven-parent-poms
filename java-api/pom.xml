@@ -52,10 +52,9 @@
 
     <properties>
         <spring-version>4.1.4.RELEASE</spring-version>
-        <joda-version>2.7</joda-version>
+        <joda-version>2.2</joda-version>
         <oval-version>1.84</oval-version>
         <slf4j-version>1.7.10</slf4j-version>
-        <logback-version>1.0.13</logback-version>
         <maven-compiler-plugin-version>3.2</maven-compiler-plugin-version>
         <maven-source-plugin-version>2.4</maven-source-plugin-version>
         <maven-javadoc-plugin-version>2.10.1</maven-javadoc-plugin-version>
@@ -123,7 +122,7 @@
             <version>${oval-version}</version>
         </dependency>
 
-        <!-- Use the Simple Logging Facade for Java (SLF4J) and logback instead of default commons-logging -->
+        <!-- Use the Simple Logging Facade for Java (SLF4J) and slf4j-simple instead of default commons-logging -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -163,8 +162,10 @@
                     <target>1.8</target>
                     <showDeprecation>true</showDeprecation>
                     <compilerArgs>
-                        <arg>-Xlint:all</arg>
-                        <arg>-Xlint:-serial</arg>
+                        <arg>-Xlint:all</arg>          <!-- do everything EXCEPT the following -->
+                        <arg>-Xlint:-serial</arg>      <!-- do not require serialVersionUID attribute -->
+                        <arg>-Xlint:-processing</arg>  <!-- do not generate annotation warnings (not reliable) -->
+                        <arg>-proc:none</arg>          <!-- turn off annotation processing during compilation -->
                     </compilerArgs>
                 </configuration>
             </plugin>
