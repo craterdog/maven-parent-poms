@@ -54,15 +54,25 @@
     </properties>
 
     <profiles>
+        <!--
+        This profile should be used when releasing a maven multi-module project using the nexus
+        staging plugin instead of the default deployment plugin.  This profile can be activated
+        by including "-P nexus" on the commandline.
+        -->
         <profile>
-            <id>release</id>
+            <id>nexus</id>
             <build>
                 <plugins>
+                    <!--
+                    This plugin causes the javadocs for a multi-module maven project to be
+                    aggregated at the top level in a single jar file.
+                    -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <version>${maven-javadoc-plugin-version}</version>
                         <configuration>
+                            <!-- include links to Java Runtime classes -->
                             <detectJavaApiLink>true</detectJavaApiLink>
                             <aggregate>true</aggregate>
                         </configuration>

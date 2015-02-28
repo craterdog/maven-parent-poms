@@ -64,11 +64,68 @@
         </repository>
     </distributionManagement>
 
+    <!--
+    This defines the plugins needed for the default maven release and deploy mechanism.  It
+    can be overridden to use the nexus staging plugin by specifying "-P nexus" on the
+    commandline.
+    -->
+    <build>
+        <plugins>
+            <!--
+            This plugin is used by maven to interact with your source code management
+            system.
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-plugin</artifactId>
+                <version>${maven-scm-plugin-version}</version>
+                <configuration>
+                    <connectionType>connection</connectionType>
+                </configuration>
+            </plugin>
+            <!--
+            This plugin is used by maven to generate a new release of the artifacts for
+            this project.  It only generates the minimum needed artifacts, no sources
+            or javadocs are generated.
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>${maven-release-plugin-version}</version>
+                <configuration>
+                    <!-- handle multi-module projects -->
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <!-- disable adding sources and javadocs in default case -->
+                    <useReleaseProfile>false</useReleaseProfile>
+                    <goals>deploy</goals>
+                </configuration>
+            </plugin>
+            <!--
+            This plugin is used by maven to deploy the generated artifacts if it has
+            not been overridden by the nexus staging plugin (see below).
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>${maven-deploy-plugin-version}</version>
+            </plugin>
+        </plugins>
+    </build>
+
     <profiles>
+        <!--
+        This profile should be used when releasing a maven project using the nexus
+        staging plugin instead of the default deployment plugin.  This profile can
+        be activated by including "-P nexus" on the commandline.
+        -->
         <profile>
-            <id>release</id>
+            <id>nexus</id>
             <build>
                 <plugins>
+                    <!--
+                    This plugin is used during deployment to sign all artifacts prior
+                    to transfering them to the central repository.
+                    -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
@@ -83,40 +140,21 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-scm-plugin</artifactId>
-                        <version>${maven-scm-plugin-version}</version>
-                        <configuration>
-                            <connectionType>connection</connectionType>
-                        </configuration>
-                    </plugin>
+                    <!--
+                    This plugin replaces the default maven deployment plugin for transfering the
+                    artifacts to a nexus compatible repository like https://oss.sonatype.org/.
+                    -->
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
                         <version>${maven-staging-plugin-version}</version>
                         <extensions>true</extensions>
                         <configuration>
+                            <!-- these properties should be defined in your settings.xml file -->
                             <serverId>${repository-id}</serverId>
-                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <nexusUrl>${repository-url}</nexusUrl>
                             <stagingProgressTimeoutMinutes>15</stagingProgressTimeoutMinutes>
                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-deploy-plugin</artifactId>
-                        <version>${maven-deploy-plugin-version}</version>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-release-plugin</artifactId>
-                        <version>${maven-release-plugin-version}</version>
-                        <configuration>
-                            <autoVersionSubmodules>true</autoVersionSubmodules>
-                            <useReleaseProfile>false</useReleaseProfile>
-                            <releaseProfiles>release</releaseProfiles>
-                            <goals>deploy</goals>
                         </configuration>
                     </plugin>
                 </plugins>

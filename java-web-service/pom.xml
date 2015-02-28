@@ -102,6 +102,9 @@
     </dependencies>
 
     <build>
+        <!--
+        This plugin allows a web service project to be tested locally using jetty.
+        -->
         <plugins>
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
@@ -110,6 +113,7 @@
                 <configuration>
                     <useTestScope>true</useTestScope>
                     <webApp>
+                        <!-- this property should be set in child pom.xml file -->
                         <contextPath>${webservice-context}</contextPath>
                     </webApp>
                 </configuration>

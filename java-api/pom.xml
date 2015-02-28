@@ -151,7 +151,9 @@
 
     <build>
         <plugins>
-
+            <!--
+            This plugin sets all the Java compiler defaults for this maven project.
+            -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -161,22 +163,30 @@
                     <target>1.8</target>
                     <showDeprecation>true</showDeprecation>
                     <compilerArgs>
-                        <arg>-Xlint:all</arg>          <!-- do everything EXCEPT the following -->
-                        <arg>-Xlint:-serial</arg>      <!-- do not require serialVersionUID attribute -->
+                        <arg>-Xlint:all</arg>          <!-- Do everything EXCEPT the following:                -->
+                        <arg>-Xlint:-serial</arg>      <!-- do not require serialVersionUID attribute          -->
                         <arg>-Xlint:-processing</arg>  <!-- do not generate annotation warnings (not reliable) -->
-                        <arg>-proc:none</arg>          <!-- turn off annotation processing during compilation -->
+                        <arg>-proc:none</arg>          <!-- turn off annotation processing during compilation  -->
                     </compilerArgs>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 
     <profiles>
+        <!--
+        This profile should be used when releasing a maven project using the nexus
+        staging plugin instead of the default deployment plugin.  This profile can
+        be activated by including "-P nexus" on the commandline.
+        -->
         <profile>
-            <id>release</id>
+            <id>nexus</id>
             <build>
                 <plugins>
+                    <!--
+                    This plugin causes a jar file containing the sources to be attached to the
+                    list of artifacts to be deployed.
+                    -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
@@ -190,10 +200,18 @@
                             </execution>
                         </executions>
                     </plugin>
+                    <!--
+                    This plugin causes a jar file containing the javadocs to be attached to the
+                    list of artifacts to be deployed.
+                    -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <version>${maven-javadoc-plugin-version}</version>
+                        <configuration>
+                            <!-- include links to Java Runtime classes -->
+                            <detectJavaApiLink>true</detectJavaApiLink>
+                        </configuration>
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
