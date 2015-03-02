@@ -51,11 +51,18 @@
 
     <properties>
         <webservice-context>MUST BE OVERRIDDEN</webservice-context>
-        <cxf-version>3.0.3</cxf-version>
+        <jaxrs-version>2.0.1</jaxrs-version>
+        <cxf-version>3.0.4</cxf-version>
         <jetty-plugin-version>9.3.0.M0</jetty-plugin-version>
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <version>${jaxrs-version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.apache.cxf</groupId>
@@ -79,6 +86,12 @@
                     <groupId>org.codehaus.jettison</groupId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-rs-service-description</artifactId>
+            <version>${cxf-version}</version>
         </dependency>
 
          <dependency>
