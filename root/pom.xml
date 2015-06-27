@@ -45,9 +45,9 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven-scm-plugin-version>1.9.2</maven-scm-plugin-version>
+        <maven-scm-plugin-version>1.9.4</maven-scm-plugin-version>
         <maven-staging-plugin-version>1.6.5</maven-staging-plugin-version>
-        <maven-release-plugin-version>2.5.1</maven-release-plugin-version>
+        <maven-release-plugin-version>2.5.2</maven-release-plugin-version>
         <maven-gpg-plugin-version>1.6</maven-gpg-plugin-version>
         <maven-deploy-plugin-version>2.8.2</maven-deploy-plugin-version>
     </properties>

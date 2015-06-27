@@ -50,80 +50,57 @@
     </developers>
 
     <properties>
-        <commons-lang-version>2.6</commons-lang-version>
-        <commons-codec-version>1.10</commons-codec-version>
+        <commons-lang-version>3.4</commons-lang-version>
         <commons-io-version>2.4</commons-io-version>
-        <jackson-version>2.5.0</jackson-version>
-        <cglib-version>3.1</cglib-version>
-        <aspectj-version>1.8.4</aspectj-version>
+        <commons-codec-version>1.10</commons-codec-version>
         <junit-version>4.12</junit-version>
         <easymock-version>3.3.1</easymock-version>
         <mockito-version>1.10.19</mockito-version>
+        <slf4j-version>1.7.12</slf4j-version>
     </properties>
 
     <dependencies>
 
         <!-- Add in General Utilities -->
         <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
             <version>${commons-lang-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-            <version>${commons-codec-version}</version>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>${commons-io-version}</version>
         </dependency>
-
-        <!-- Allow Formatting in JSON -->
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${jackson-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.datatype</groupId>
-            <artifactId>jackson-datatype-joda</artifactId>
-            <version>${jackson-version}</version>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${commons-codec-version}</version>
         </dependency>
 
-        <!-- AOP dependencies -->
+        <!-- Use the Simple Logging Facade for Java (SLF4J) and slf4j-simple instead of default commons-logging -->
         <dependency>
-            <groupId>cglib</groupId>
-            <artifactId>cglib</artifactId>
-            <version>${cglib-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjtools</artifactId>
-            <version>${aspectj-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>${aspectj-version}</version>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-version}</version>
         </dependency>
 
-        <!-- Various Application Context utilities, including EhCache, JavaMail,
-            Quartz, and Freemarker integration Define this if you need any of these integrations -->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context-support</artifactId>
-            <version>${spring-version}</version>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-ext</artifactId>
+            <version>${slf4j-version}</version>
         </dependency>
 
-        <!-- Support for testing Spring applications with tools such as JUnit
-            and TestNG This artifact is generally defined with a 'test' scope for the
-            integration testing framework and unit testing stubs -->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>${spring-version}</version>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${slf4j-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j-version}</version>
             <scope>test</scope>
         </dependency>
 

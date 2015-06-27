@@ -1,0 +1,164 @@
+<!--
+ ************************************************************************
+ * Copyright (c) Crater Dog Technologies(TM).  All Rights Reserved.     *
+ ************************************************************************
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.        *
+ *                                                                      *
+ * This code is free software; you can redistribute it and/or modify it *
+ * under the terms of The MIT License (MIT), as published by the Open   *
+ * Source Initiative. (See http://opensource.org/licenses/MIT)          *
+ ************************************************************************
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.craterdog.maven-parent-poms</groupId>
+        <artifactId>java-pojo</artifactId>
+        <version>3.12-SNAPSHOT</version>
+        <relativePath>../java-pojo/pom.xml</relativePath>
+    </parent>
+
+    <organization>
+        <name>Crater Dog Technologies(TM)</name>
+        <url>http://craterdog.com</url>
+    </organization>
+
+    <name>Crater Dog Java Component Parent POM</name>
+    <description>The parent POM for all Java Spring based components.</description>
+    <url>https://github.com/craterdog/maven-parent-poms/wiki</url>
+
+    <groupId>com.craterdog.maven-parent-poms</groupId>
+    <artifactId>java-component</artifactId>
+    <version>3.12-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+            <url>http://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Derk Norton</name>
+            <email>derk.norton@gmail.com</email>
+            <organization>Crater Dog Technologies(TM)</organization>
+            <organizationUrl>http://craterdog.com</organizationUrl>
+        </developer>
+    </developers>
+
+    <properties>
+        <jackson-version>2.5.4</jackson-version>
+        <cglib-version>3.1</cglib-version>
+        <aspectj-version>1.8.6</aspectj-version>
+        <spring-version>4.1.6.RELEASE</spring-version>
+    </properties>
+
+    <dependencies>
+
+        <!-- Allow Formatting in JSON -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-joda</artifactId>
+            <version>${jackson-version}</version>
+        </dependency>
+
+        <!-- AOP dependencies -->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>${cglib-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjtools</artifactId>
+            <version>${aspectj-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj-version}</version>
+        </dependency>
+
+        <!-- Core utilities used by other modules. Define this if you use
+            Spring Utility APIs (org.springframework.core.*/org.springframework.util.*) -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring-version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- Expression Language (depends on spring-core) Define this if
+            you use Spring Expression APIs (org.springframework.expression.*) -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+            <version>${spring-version}</version>
+        </dependency>
+
+        <!-- Bean Factory and JavaBeans utilities (depends on spring-core)
+            Define this if you use Spring Bean APIs (org.springframework.beans.*) -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring-version}</version>
+        </dependency>
+
+        <!-- Aspect Oriented Programming (AOP) Framework (depends on spring-core,
+            spring-beans) Define this if you use Spring AOP APIs (org.springframework.aop.*) -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring-version}</version>
+        </dependency>
+
+        <!-- Application Context (depends on spring-core, spring-expression, spring-aop, spring-beans)
+            This is the central artifact for Spring's Dependency Injection Container and is generally
+            always defined -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring-version}</version>
+        </dependency>
+
+        <!-- Various Application Context utilities, including EhCache, JavaMail,
+            Quartz, and Freemarker integration Define this if you need any of these integrations -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring-version}</version>
+        </dependency>
+
+        <!-- Support for testing Spring applications with tools such as JUnit
+            and TestNG This artifact is generally defined with a 'test' scope for the
+            integration testing framework and unit testing stubs -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring-version}</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <scm>
+        <connection>scm:git:git@github.com:craterdog/maven-parent-poms.git</connection>
+        <developerConnection>scm:git:git@github.com:craterdog/maven-parent-poms.git</developerConnection>
+        <url>git@github.com:craterdog/maven-parent-poms.git</url>
+        <tag>HEAD</tag>
+    </scm>
+
+</project>

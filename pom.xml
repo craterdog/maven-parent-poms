@@ -54,6 +54,7 @@
         <module>java-aggregator</module>
         <module>java-api</module>
         <module>java-pojo</module>
+        <module>java-component</module>
         <module>java-web-service</module>
     </modules>
 
