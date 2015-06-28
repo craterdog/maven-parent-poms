@@ -104,6 +104,7 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Include all the standard unit test suites. -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

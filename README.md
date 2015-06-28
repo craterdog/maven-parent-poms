@@ -9,9 +9,11 @@ This open source Maven multi-module project provides a starter set of parent `po
 The following highlights the parent pom.xml file that this project provides:
 
  * *root* - the root parent pom.xml file for all other parent pom.xml files
+ * *java-aggregator* - defines dependencies needed by multi-module maven projects
  * *java-api* - defines dependencies needed by projects that only define Java interfaces and
 purely declarative classes (no methods)
  * *java-pojo* - defines dependencies needed by projects that define "plain old Java objects" (POJOs)
+ * *java-component* - defines dependencies needed by projects that depend on the Java Spring Framework
  * *java-web-service* - defines dependencies needed by web resources
 
 ### Quick Links
@@ -29,9 +31,8 @@ maven pom.xml file:
 ```xml
     <parent>
         <groupId>com.craterdog.maven-parent-poms</groupId>
-        <artifactId>java-pojo</artifactId> <!-- or whichever parent POM project is right for your project -->
+        <artifactId>java-component</artifactId> <!-- or whichever is right for your project -->
         <version>x.y</version>
-        <relativePath/>
     </parent>
 ```
 
