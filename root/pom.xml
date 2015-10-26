@@ -55,12 +55,12 @@
     <distributionManagement>
         <!-- these properties should be defined in your settings.xml file -->
         <snapshotRepository>
-            <id>${snapshot-repository-id}</id>
-            <url>${snapshot-repository-url}</url>
+            <id>${repository-id}</id>
+            <url>${repository-snapshot-url}</url>
         </snapshotRepository>
         <repository>
-            <id>${release-repository-id}</id>
-            <url>${release-repository-url}</url>
+            <id>${repository-id}</id>
+            <url>${repository-release-url}</url>
         </repository>
     </distributionManagement>
 
@@ -151,8 +151,8 @@
                         <extensions>true</extensions>
                         <configuration>
                             <!-- these properties should be defined in your settings.xml file -->
-                            <serverId>${release-repository-id}</serverId>
-                            <nexusUrl>${release-repository-url}</nexusUrl>
+                            <serverId>${repository-id}</serverId>
+                            <nexusUrl>${repository-url}</nexusUrl>
                             <stagingProgressTimeoutMinutes>15</stagingProgressTimeoutMinutes>
                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
                         </configuration>
