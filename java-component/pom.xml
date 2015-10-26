@@ -50,10 +50,10 @@
     </developers>
 
     <properties>
-        <jackson-version>2.5.4</jackson-version>
+        <jackson-version>2.6.3</jackson-version>
         <cglib-version>3.1</cglib-version>
-        <aspectj-version>1.8.6</aspectj-version>
-        <spring-version>4.1.6.RELEASE</spring-version>
+        <aspectj-version>1.8.7</aspectj-version>
+        <spring-version>4.2.2.RELEASE</spring-version>
     </properties>
 
     <dependencies>
@@ -157,7 +157,7 @@
     <scm>
         <connection>scm:git:git@github.com:craterdog/maven-parent-poms.git</connection>
         <developerConnection>scm:git:git@github.com:craterdog/maven-parent-poms.git</developerConnection>
-        <url>git@github.com:craterdog/maven-parent-poms.git</url>
+        <url>https://github.com/craterdog/maven-parent-poms</url>
         <tag>HEAD</tag>
     </scm>
 

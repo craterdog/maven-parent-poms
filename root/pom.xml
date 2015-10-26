@@ -46,8 +46,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven-scm-plugin-version>1.9.4</maven-scm-plugin-version>
-        <maven-staging-plugin-version>1.6.5</maven-staging-plugin-version>
-        <maven-release-plugin-version>2.5.2</maven-release-plugin-version>
+        <maven-staging-plugin-version>1.6.6</maven-staging-plugin-version>
+        <maven-release-plugin-version>2.5.3</maven-release-plugin-version>
         <maven-gpg-plugin-version>1.6</maven-gpg-plugin-version>
         <maven-deploy-plugin-version>2.8.2</maven-deploy-plugin-version>
     </properties>
@@ -55,12 +55,12 @@
     <distributionManagement>
         <!-- these properties should be defined in your settings.xml file -->
         <snapshotRepository>
-            <id>${repository-id}</id>
-            <url>${repository-snapshot-url}</url>
+            <id>${snapshot-repository-id}</id>
+            <url>${snapshot-repository-url}</url>
         </snapshotRepository>
         <repository>
-            <id>${repository-id}</id>
-            <url>${repository-release-url}</url>
+            <id>${release-repository-id}</id>
+            <url>${release-repository-url}</url>
         </repository>
     </distributionManagement>
 
@@ -151,8 +151,8 @@
                         <extensions>true</extensions>
                         <configuration>
                             <!-- these properties should be defined in your settings.xml file -->
-                            <serverId>${repository-id}</serverId>
-                            <nexusUrl>${repository-url}</nexusUrl>
+                            <serverId>${release-repository-id}</serverId>
+                            <nexusUrl>${release-repository-url}</nexusUrl>
                             <stagingProgressTimeoutMinutes>15</stagingProgressTimeoutMinutes>
                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
                         </configuration>
@@ -165,7 +165,7 @@
     <scm>
         <connection>scm:git:git@github.com:craterdog/maven-parent-poms.git</connection>
         <developerConnection>scm:git:git@github.com:craterdog/maven-parent-poms.git</developerConnection>
-        <url>git@github.com:craterdog/maven-parent-poms.git</url>
+        <url>https://github.com/craterdog/maven-parent-poms</url>
         <tag>HEAD</tag>
     </scm>
 
