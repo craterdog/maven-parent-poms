@@ -53,8 +53,6 @@
         <joda-version>2.8.1</joda-version>
         <oval-version>1.84</oval-version>
         <maven-compiler-plugin-version>3.3</maven-compiler-plugin-version>
-        <maven-source-plugin-version>2.4</maven-source-plugin-version>
-        <maven-javadoc-plugin-version>2.10.3</maven-javadoc-plugin-version>
     </properties>
 
     <dependencies>
@@ -100,6 +98,7 @@
     </build>
 
     <profiles>
+
         <!--
         This profile should be used when releasing a maven project using the nexus
         staging plugin instead of the default deployment plugin.  This profile can
@@ -107,6 +106,9 @@
         -->
         <profile>
             <id>nexus</id>
+            <properties>
+                <maven-source-plugin-version>2.4</maven-source-plugin-version>
+            </properties>
             <build>
                 <plugins>
                     <!--
@@ -126,6 +128,26 @@
                             </execution>
                         </executions>
                     </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!--
+        This profile should be used when doing final verification prior to releasing a maven
+        project.  This profile can be activated by including "-P verify" on the commandline.
+        -->
+        <profile>
+            <id>verify</id>
+            <activation>
+                <property>
+                    <name>profile.nexus</name>
+                </property>
+            </activation>
+            <properties>
+                <maven-javadoc-plugin-version>2.10.3</maven-javadoc-plugin-version>
+            </properties>
+            <build>
+                <plugins>
                     <!--
                     This plugin causes a jar file containing the javadocs to be attached to the
                     list of artifacts to be deployed.
@@ -150,6 +172,7 @@
                 </plugins>
             </build>
         </profile>
+
     </profiles>
 
     <scm>

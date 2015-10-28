@@ -49,18 +49,21 @@
         </developer>
     </developers>
 
-    <properties>
-        <maven-javadoc-plugin-version>2.10.3</maven-javadoc-plugin-version>
-    </properties>
-
     <profiles>
         <!--
-        This profile should be used when releasing a maven multi-module project using the nexus
-        staging plugin instead of the default deployment plugin.  This profile can be activated
-        by including "-P nexus" on the commandline.
+        This profile should be used when doing final verification prior to releasing a maven multi-module
+        project.  This profile can be activated by including "-P verify" on the commandline.
         -->
         <profile>
-            <id>nexus</id>
+            <id>verify</id>
+            <activation>
+                <property>
+                    <name>profile.nexus</name>
+                </property>
+            </activation>
+            <properties>
+                <maven-javadoc-plugin-version>2.10.3</maven-javadoc-plugin-version>
+            </properties>
             <build>
                 <plugins>
                     <!--
