@@ -145,7 +145,7 @@
 
     <profiles>
         <!--
-        This profile should be used when doing final verification prior to releasing a maven multi-module
+        This profile should be used when doing final verification prior to releasing a maven
         project.  This profile can be activated by including "-P verify" on the commandline.
         -->
         <profile>
@@ -153,6 +153,12 @@
             <properties>
                 <findbugs-plugin-version>3.0.2</findbugs-plugin-version>
                 <jacoco-plugin-version>0.7.5.201505241946</jacoco-plugin-version>
+                <!-- these values can be reset in the child pom.xml file. -->
+                <jacoco-maximum-classes-missed>0</jacoco-maximum-classes-missed>
+                <jacoco-minimum-methods-covered-ratio>0.80</jacoco-minimum-methods-covered-ratio>
+                <jacoco-minimum-branches-covered-ratio>0.80</jacoco-minimum-branches-covered-ratio>
+                <jacoco-minimum-instructions-covered-ratio>0.80</jacoco-minimum-instructions-covered-ratio>
+                <jacoco-minimum-complexity-covered-ratio>0.80</jacoco-minimum-complexity-covered-ratio>
             </properties>
             <reporting>
                 <plugins>
@@ -196,23 +202,37 @@
                                 <configuration>
                                     <haltOnFailure>false</haltOnFailure>
                                     <rules>
-                                        <rule implementation="org.jacoco.maven.RuleConfiguration">
+                                        <rule>
                                             <element>BUNDLE</element>
+                                            <excludes>
+                                                <exclude>*Test</exclude>
+                                                <exclude>*IT</exclude>
+                                            </excludes>
                                             <limits>
-                                                <limit implementation="org.jacoco.report.check.Limit">
-                                                    <counter>INSTRUCTION</counter>
-                                                    <value>COVEREDRATIO</value>
-                                                    <minimum>0.80</minimum>
-                                                </limit>
-                                                <limit implementation="org.jacoco.report.check.Limit">
+                                                <limit>
                                                     <counter>CLASS</counter>
                                                     <value>MISSEDCOUNT</value>
-                                                    <maximum>0</maximum>
+                                                    <maximum>${jacoco-maximum-classes-missed}</maximum>
                                                 </limit>
-                                                <limit implementation="org.jacoco.report.check.Limit">
+                                                <limit>
+                                                    <counter>METHOD</counter>
+                                                    <value>COVEREDRATIO</value>
+                                                    <minimum>${jacoco-minimum-methods-covered-ratio}</minimum>
+                                                </limit>
+                                                <limit>
+                                                    <counter>BRANCH</counter>
+                                                    <value>COVEREDRATIO</value>
+                                                    <minimum>${jacoco-minimum-branches-covered-ratio}</minimum>
+                                                </limit>
+                                                <limit>
+                                                    <counter>INSTRUCTION</counter>
+                                                    <value>COVEREDRATIO</value>
+                                                    <minimum>${jacoco-minimum-instructions-covered-ratio}</minimum>
+                                                </limit>
+                                                <limit>
                                                     <counter>COMPLEXITY</counter>
                                                     <value>COVEREDRATIO</value>
-                                                    <minimum>0.60</minimum>
+                                                    <minimum>${jacoco-minimum-complexity-covered-ratio}</minimum>
                                                 </limit>
                                             </limits>
                                         </rule>
