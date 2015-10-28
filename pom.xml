@@ -15,7 +15,7 @@
     <parent>
         <groupId>com.craterdog.maven-parent-poms</groupId>
         <artifactId>root</artifactId>
-        <version>3.14</version>
+        <version>3.15-SNAPSHOT</version>
         <relativePath>root/pom.xml</relativePath>
     </parent>
 
@@ -30,7 +30,7 @@
 
     <groupId>com.craterdog.maven-parent-poms</groupId>
     <artifactId>aggregator</artifactId>
-    <version>3.14</version>
+    <version>3.15-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <licenses>
@@ -62,7 +62,7 @@
         <connection>scm:git:git@github.com:craterdog/maven-parent-poms.git</connection>
         <developerConnection>scm:git:git@github.com:craterdog/maven-parent-poms.git</developerConnection>
         <url>https://github.com/craterdog/maven-parent-poms</url>
-        <tag>aggregator-3.14</tag>
+        <tag>HEAD</tag>
     </scm>
 
 </project>
