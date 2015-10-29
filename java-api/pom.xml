@@ -110,6 +110,7 @@
             <id>nexus</id>
             <properties>
                 <maven-source-plugin-version>2.4</maven-source-plugin-version>
+                <maven-javadoc-plugin-version>2.10.3</maven-javadoc-plugin-version>
             </properties>
             <build>
                 <plugins>
@@ -130,6 +131,28 @@
                             </execution>
                         </executions>
                     </plugin>
+
+                    <!--
+                    This plugin causes a jar file containing the javadocs to be attached to the
+                    list of artifacts to be deployed.
+                    -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>${maven-javadoc-plugin-version}</version>
+                        <configuration>
+                            <!-- include links to Java Runtime classes -->
+                            <detectJavaApiLink>true</detectJavaApiLink>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
                 </plugins>
             </build>
         </profile>
@@ -140,11 +163,6 @@
         -->
         <profile>
             <id>verify</id>
-            <activation>
-                <property>
-                    <name>profile.nexus</name>
-                </property>
-            </activation>
             <properties>
                 <maven-javadoc-plugin-version>2.10.3</maven-javadoc-plugin-version>
             </properties>
