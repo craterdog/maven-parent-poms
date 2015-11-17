@@ -66,7 +66,7 @@
 
     <!--
     This defines the plugins needed for the default maven release and deploy mechanism.  It
-    can be overridden to use the nexus staging plugin by specifying "-P nexus" on the
+    can be overridden to use the nexus staging plugin by specifying "-P verify,nexus" on the
     commandline.
     -->
     <build>
