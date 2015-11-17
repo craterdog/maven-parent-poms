@@ -115,8 +115,11 @@
     <profiles>
         <!--
         This profile should be used when releasing a maven project using the nexus
-        staging plugin instead of the default deployment plugin.  This profile can
-        be activated by including "-P nexus" on the commandline.
+        staging plugin instead of the default deployment plugin.  NOTE: you must setup
+        a signing key to release artifacts.  Directions on how to set this up and other
+        important steps is documented here:
+        https://github.com/craterdog/maven-parent-poms/wiki/Jump-Starting-an-Open-Source-Project#creating-a-sonatype-account
+        This profile can be activated by including "-P nexus" on the commandline.
         -->
         <profile>
             <id>nexus</id>
