@@ -50,7 +50,7 @@
     </developers>
 
     <properties>
-        <jackson-version>2.9.10.1</jackson-version>
+        <jackson-version>2.10.3</jackson-version>
         <cglib-version>3.1</cglib-version>
         <aspectj-version>1.8.7</aspectj-version>
         <spring-version>4.3.17.RELEASE</spring-version>
