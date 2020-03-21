@@ -53,7 +53,7 @@
         <jackson-version>2.10.3</jackson-version>
         <cglib-version>3.1</cglib-version>
         <aspectj-version>1.8.7</aspectj-version>
-        <spring-version>4.3.17.RELEASE</spring-version>
+        <spring-version>5.2.4.RELEASE</spring-version>
     </properties>
 
     <dependencies>
