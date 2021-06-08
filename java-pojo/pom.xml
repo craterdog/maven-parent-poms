@@ -15,7 +15,7 @@
     <parent>
         <groupId>com.craterdog.maven-parent-poms</groupId>
         <artifactId>java-api</artifactId>
-        <version>3.18</version>
+        <version>3.19-SNAPSHOT</version>
         <relativePath>../java-api/pom.xml</relativePath>
     </parent>
 
@@ -30,7 +30,7 @@
 
     <groupId>com.craterdog.maven-parent-poms</groupId>
     <artifactId>java-pojo</artifactId>
-    <version>3.18</version>
+    <version>3.19-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <licenses>
@@ -250,7 +250,7 @@
         <connection>scm:git:git@github.com:craterdog/maven-parent-poms.git</connection>
         <developerConnection>scm:git:git@github.com:craterdog/maven-parent-poms.git</developerConnection>
         <url>https://github.com/craterdog/maven-parent-poms</url>
-        <tag>aggregator-3.18</tag>
+        <tag>HEAD</tag>
     </scm>
 
 </project>
