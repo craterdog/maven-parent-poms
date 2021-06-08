@@ -122,7 +122,6 @@
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <type>maven-plugin</type>
                 <version>${jetty-plugin-version}</version>
                 <configuration>
                     <useTestScope>true</useTestScope>
