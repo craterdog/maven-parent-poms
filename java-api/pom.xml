@@ -53,8 +53,8 @@
         <joda-version>2.10.10</joda-version>
         <oval-version>3.2.0</oval-version>
         <maven-compiler-plugin-version>3.8.1</maven-compiler-plugin-version>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
     </properties>
 
     <dependencies>
