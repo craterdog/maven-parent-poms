@@ -78,7 +78,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-scm-plugin</artifactId>
-                <type>maven-plugin</type>
                 <version>${maven-scm-plugin-version}</version>
                 <configuration>
                     <connectionType>connection</connectionType>
@@ -92,7 +91,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <type>maven-plugin</type>
                 <version>${maven-release-plugin-version}</version>
                 <configuration>
                     <!-- handle multi-module projects -->
@@ -109,7 +107,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-deploy-plugin</artifactId>
-                <type>maven-plugin</type>
                 <version>${maven-deploy-plugin-version}</version>
             </plugin>
         </plugins>
@@ -135,7 +132,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <type>maven-plugin</type>
                         <version>${maven-gpg-plugin-version}</version>
                         <executions>
                             <execution>
@@ -154,7 +150,6 @@
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <type>maven-plugin</type>
                         <version>${maven-staging-plugin-version}</version>
                         <extensions>true</extensions>
                         <configuration>

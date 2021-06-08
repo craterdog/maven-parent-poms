@@ -138,7 +138,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <type>maven-plugin</type>
                 <version>${maven-failsafe-plugin-version}</version>
             </plugin>
         </plugins>
@@ -166,7 +165,6 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>findbugs-maven-plugin</artifactId>
-                        <type>maven-plugin</type>
                         <version>${findbugs-plugin-version}</version>
                     </plugin>
                 </plugins>
@@ -176,13 +174,11 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>findbugs-maven-plugin</artifactId>
-                        <type>maven-plugin</type>
                         <version>${findbugs-plugin-version}</version>
                     </plugin>
                     <plugin>
                         <groupId>org.jacoco</groupId>
                         <artifactId>jacoco-maven-plugin</artifactId>
-                        <type>maven-plugin</type>
                         <version>${jacoco-plugin-version}</version>
                         <executions>
                             <execution>
