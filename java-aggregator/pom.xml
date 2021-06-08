@@ -57,7 +57,7 @@
         <profile>
             <id>verify</id>
             <properties>
-                <maven-javadoc-plugin-version>2.10.3</maven-javadoc-plugin-version>
+                <maven-javadoc-plugin-version>3.3.0</maven-javadoc-plugin-version>
             </properties>
             <build>
                 <plugins>
@@ -68,6 +68,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
+                        <type>maven-plugin</type>
                         <version>${maven-javadoc-plugin-version}</version>
                         <configuration>
                             <!-- include links to Java Runtime classes -->

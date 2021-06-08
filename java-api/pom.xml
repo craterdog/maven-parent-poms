@@ -50,8 +50,8 @@
     </developers>
 
     <properties>
-        <joda-version>2.8.1</joda-version>
-        <oval-version>1.84</oval-version>
+        <joda-version>2.10.10</joda-version>
+        <oval-version>3.2.0</oval-version>
         <maven-compiler-plugin-version>3.8.1</maven-compiler-plugin-version>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -83,6 +83,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <type>maven-plugin</type>
                 <version>${maven-compiler-plugin-version}</version>
                 <configuration>
                     <source>${maven.compiler.source}</source>
@@ -107,8 +108,8 @@
         <profile>
             <id>verify</id>
             <properties>
-                <maven-source-plugin-version>2.4</maven-source-plugin-version>
-                <maven-javadoc-plugin-version>2.10.3</maven-javadoc-plugin-version>
+                <maven-source-plugin-version>3.2.1</maven-source-plugin-version>
+                <maven-javadoc-plugin-version>3.3.0</maven-javadoc-plugin-version>
             </properties>
             <build>
                 <plugins>

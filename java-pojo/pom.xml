@@ -50,14 +50,14 @@
     </developers>
 
     <properties>
-        <commons-lang3-version>3.4</commons-lang3-version>
-        <commons-io-version>2.7</commons-io-version>
-        <commons-codec-version>1.10</commons-codec-version>
-        <junit-version>4.13.1</junit-version>
-        <easymock-version>3.4</easymock-version>
+        <commons-lang3-version>3.12.0</commons-lang3-version>
+        <commons-io-version>2.9.0</commons-io-version>
+        <commons-codec-version>1.15</commons-codec-version>
+        <junit-version>4.13.2</junit-version>
+        <easymock-version>4.3</easymock-version>
         <mockito-version>1.10.19</mockito-version>
-        <slf4j-version>1.7.12</slf4j-version>
-        <maven-failsafe-plugin-version>2.19</maven-failsafe-plugin-version>
+        <slf4j-version>1.7.30</slf4j-version>
+        <maven-failsafe-plugin-version>2.22.2</maven-failsafe-plugin-version>
     </properties>
 
     <dependencies>
@@ -138,6 +138,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
+                <type>maven-plugin</type>
                 <version>${maven-failsafe-plugin-version}</version>
             </plugin>
         </plugins>
@@ -151,8 +152,8 @@
         <profile>
             <id>verify</id>
             <properties>
-                <findbugs-plugin-version>3.0.2</findbugs-plugin-version>
-                <jacoco-plugin-version>0.7.5.201505241946</jacoco-plugin-version>
+                <findbugs-plugin-version>3.0.5</findbugs-plugin-version>
+                <jacoco-plugin-version>0.8.7</jacoco-plugin-version>
                 <!-- these values can be reset in the child pom.xml file. -->
                 <jacoco-maximum-classes-missed>0</jacoco-maximum-classes-missed>
                 <jacoco-minimum-methods-covered-ratio>0.80</jacoco-minimum-methods-covered-ratio>
@@ -165,6 +166,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>findbugs-maven-plugin</artifactId>
+                        <type>maven-plugin</type>
                         <version>${findbugs-plugin-version}</version>
                     </plugin>
                 </plugins>
@@ -174,11 +176,13 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>findbugs-maven-plugin</artifactId>
+                        <type>maven-plugin</type>
                         <version>${findbugs-plugin-version}</version>
                     </plugin>
                     <plugin>
                         <groupId>org.jacoco</groupId>
                         <artifactId>jacoco-maven-plugin</artifactId>
+                        <type>maven-plugin</type>
                         <version>${jacoco-plugin-version}</version>
                         <executions>
                             <execution>
