@@ -50,11 +50,11 @@
     </developers>
 
     <properties>
-        <joda-version>2.10.10</joda-version>
-        <oval-version>3.2.0</oval-version>
+        <joda-version>2.10.13</joda-version>
+        <oval-version>3.2.1</oval-version>
         <maven-compiler-plugin-version>3.8.1</maven-compiler-plugin-version>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -108,7 +108,7 @@
             <id>verify</id>
             <properties>
                 <maven-source-plugin-version>3.2.1</maven-source-plugin-version>
-                <maven-javadoc-plugin-version>3.3.0</maven-javadoc-plugin-version>
+                <maven-javadoc-plugin-version>3.3.1</maven-javadoc-plugin-version>
             </properties>
             <build>
                 <plugins>

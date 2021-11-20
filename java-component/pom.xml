@@ -52,8 +52,8 @@
     <properties>
         <jackson-version>2.12.3</jackson-version>
         <cglib-version>3.3.0</cglib-version>
-        <aspectj-version>1.9.7.M3</aspectj-version>
-        <spring-version>5.3.7</spring-version>
+        <aspectj-version>1.9.7</aspectj-version>
+        <spring-version>5.3.13</spring-version>
     </properties>
 
     <dependencies>
