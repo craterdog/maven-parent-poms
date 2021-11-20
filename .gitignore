@@ -1,0 +1,35 @@
+# Random Files and Directories
+.*.swp
+._*
+.DS_Store
+.hg
+.lock-wscript
+.wafpickle-*
+config.gypi
+logs
+*.log
+*.ctxt
+*.class
+hs_err_pid*
+target/
+dist/
+test/config/
+
+# Development Repositories
+CVS
+.svn
+.git
+
+# Package Files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# dotenv environment variables file
+.env
+
+# NetBeans
+nbproject/
