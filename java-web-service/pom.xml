@@ -52,8 +52,8 @@
     <properties>
         <webservice-context>MUST BE OVERRIDDEN</webservice-context>
         <jaxrs-version>2.1.1</jaxrs-version>
-        <cxf-version>3.4.5</cxf-version>
-        <jetty-plugin-version>11.0.7</jetty-plugin-version>
+        <cxf-version>3.5.2</cxf-version>
+        <jetty-plugin-version>11.0.9</jetty-plugin-version>
     </properties>
 
     <dependencies>

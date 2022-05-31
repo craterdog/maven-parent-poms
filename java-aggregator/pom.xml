@@ -57,7 +57,7 @@
         <profile>
             <id>verify</id>
             <properties>
-                <maven-javadoc-plugin-version>3.3.0</maven-javadoc-plugin-version>
+                <maven-javadoc-plugin-version>3.3.2</maven-javadoc-plugin-version>
             </properties>
             <build>
                 <plugins>
