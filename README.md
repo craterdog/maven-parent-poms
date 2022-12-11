@@ -1,5 +1,7 @@
 ![Maven Parent POMs](https://github.com/craterdog/maven-parent-poms/blob/master/docs/images/DNA.jpg)
 
+# THIS REPOSITORY HAS BEEN ARCHIVED AND IS NO LONGER SUPPORTED
+
 ### Maven Parent POMs
 [Apache Maven](https://maven.apache.org/) is a popular dependency management system that makes it easier to build software projects. Maven defines a "project object model" file called `pom.xml` for each project. It defines the dependencies that that project has on other projects and plugins. One of the nice features of Maven is the ability to inherit dependencies from a parent `pom.xml` file.
 
